@@ -23,23 +23,23 @@ function Login({
         },
         validationSchema: validationFormLogin,
         onSubmit: values => {
-            onLogin( values.email, values.password )
+            onLogin(values.email, values.password)
         }
     })
 
     return (
         <>
             <div className="LoginBg">
-            <div className="Login">
-                <div className="Login-top">
-                    <img src={Logo} className="Login-top-img" alt="logo top" />
-                </div>
-             
-                <div className="Login-middle">
+                <div className="Login">
+                    <div className="Login-top">
+                        <img src={Logo} className="Login-top-img" alt="logo top" />
+                    </div>
+
+                    <div className="Login-middle">
                         <div className="Login-middle-left">
-                            <img 
-                                src={DeviceImage} 
-                                alt="Device " 
+                            <img
+                                src={DeviceImage}
+                                alt="Device "
                                 className="Login-middle-left-img"
                             />
                         </div>
@@ -48,17 +48,17 @@ function Login({
                                 <h1>Mulai Kelola Pelanggan Anda Sekarang.</h1>
                             </div>
                             <form className="Login-middle-right-form" onSubmit={formik.handleSubmit}>
-                                <InputComponent 
+                                <InputComponent
                                     placeholder="example@mail.com"
                                     type="text"
                                     name="email"
                                     onChange={formik.handleChange}
                                     value={formik.values.email}
                                     className="Input-control Input-control__with-focus mb-tiny"
-                                    isError={formik.touched.email && Boolean(formik.errors.email) }
+                                    isError={formik.touched.email && Boolean(formik.errors.email)}
                                     message={formik.touched.email && formik.errors.email}
                                 />
-                                <InputComponent 
+                                <InputComponent
                                     placeholder="Password"
                                     type="password"
                                     name="password"
@@ -77,13 +77,13 @@ function Login({
                             </form>
                             <p className="Login-middle-right-joinus">Ingin bermitra dengan kami? <NavLink to="/">Daftar Sekarang</NavLink> </p>
                         </div>
-                    </div> 
-                
-                {isLoading && (
-                    <RKLoader />
-                )}
-                <div className="Login-bottom"></div>
-            </div>
+                    </div>
+
+                    {isLoading && (
+                        <RKLoader />
+                    )}
+                    <div className="Login-bottom"></div>
+                </div>
             </div>
         </>
     )
@@ -97,8 +97,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onLogin: (email, password) => dispatch( auth( email, password )  )
+        onLogin: (email, password) => dispatch(auth(email, password))
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (Login)
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
