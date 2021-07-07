@@ -1,0 +1,30 @@
+.LoadingFullRk {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(#fff, 1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  & > p {
+    color: var(--color-primary);
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+}
+
+.LoadingFullRk__heading {
+  font-size: 5vw;
+  font-family: "intern";
+  font-weight: 800;
+  color: var(--color-grey-dark-1);
+}
+
+.LoadingFullRk__heading > span {
+  color: var(--color-primary);
+}
